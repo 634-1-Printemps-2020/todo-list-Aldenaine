@@ -37,4 +37,15 @@ public class TaskManager implements TaskManagerInterface {
     public List<Task> getTaskByCriteria() {
         return null;
     }
+
+    public boolean check(User u, Task t){
+        if (mapUserTasks.containsKey(u)){
+            return mapUserTasks.get(u).contains(t);
+        }
+        return false;
+    }
+
+    public Map<User, List<Task>> getMapUserTasks() {
+        return mapUserTasks;
+    }
 }

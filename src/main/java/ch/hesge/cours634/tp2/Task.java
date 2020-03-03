@@ -58,4 +58,15 @@ public class Task {
     public int hashCode() {
         return Objects.hash(user, description, dateExe, status, resolution);
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "user=" + user +
+                ", description='" + description + '\'' +
+                ", dateExe=" + dateExe +
+                ", status=" + status +
+                ", resolution=" + resolution +
+                '}';
+    }
 }
