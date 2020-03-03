@@ -25,11 +25,19 @@ public class TaskManagerTest {
         taskManage.addTask(u3, t3);
         taskManage.addTask(u, t3);
         Assert.assertTrue(taskManage.check(u, t));
-        System.out.printf(taskManage.getMapUserTasks().toString());
+
     }
 
     @Test
     public void cancelTask() {
+        TaskManager taskManage = new TaskManager();
+        User u = new User("bernard", "bernard@hotmail.com");
+        Task t = new Task(u, "manger un grec", new Date());
+        taskManage.addTask(u, t);
+        System.out.println(taskManage.getMapUserTasks().toString());
+        taskManage.cancelTask(u, t);
+        System.out.println(taskManage.getMapUserTasks().toString());
+        Assert.assertTrue(t.getStatus()==Status.canceled);
     }
 
     @Test

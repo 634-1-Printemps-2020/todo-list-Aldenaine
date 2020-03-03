@@ -24,7 +24,9 @@ public class TaskManager implements TaskManagerInterface {
     public void cancelTask(User user, Task task) {
         if(mapUserTasks.containsKey(user)){
             List<Task> lstTasks = mapUserTasks.get(user);
-            lstTasks.remove(task);
+            for (Task t: lstTasks){
+                if(task.equals(t)){t.changeStatus(Status.canceled);}
+            }
         }
     }
 
